@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LoginController">
+   <children>
+      <VBox fx:id="loginPane" prefHeight="400.0" prefWidth="300.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Login">
+               <VBox.margin>
+                  <Insets left="16.0" top="12.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <VBox.margin>
+                  <Insets left="16.0" top="43.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="userField">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="3.0" />
+               </VBox.margin>
+            </TextField>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <VBox.margin>
+                  <Insets left="16.0" top="33.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <PasswordField fx:id="passField">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" top="3.0" />
+               </VBox.margin>
+            </PasswordField>
+            <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#onLogin" prefHeight="30.0" prefWidth="289.0" text="Login" textOverrun="CLIP">
+               <VBox.margin>
+                  <Insets left="65.0" right="85.0" top="12.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Hyperlink fx:id="registerLink" onAction="#onOpenSignUp" text="Sign up">
+               <VBox.margin>
+                  <Insets left="115.0" top="11.0" />
+               </VBox.margin>
+            </Hyperlink>
+            <Text fx:id="infoText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.13671875">
+               <VBox.margin>
+                  <Insets left="86.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets top="16.0" />
+         </opaqueInsets>
+      </VBox>
+      <Pane fx:id="signUpPane" prefHeight="400.0" prefWidth="300.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text layoutX="16.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <TextField fx:id="signUpUserField" layoutX="16.0" layoutY="96.0" prefHeight="25.0" prefWidth="270.0" />
+            <Text layoutX="16.0" layoutY="170.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <PasswordField fx:id="signUpPassField" layoutX="16.0" layoutY="176.0" prefHeight="25.0" prefWidth="270.0" />
+            <Text layoutX="16.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create account">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Button fx:id="signUpBtn" layoutX="66.0" layoutY="214.0" mnemonicParsing="false" onAction="#onRegister" prefHeight="16.0" prefWidth="149.0" text="Create account">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Hyperlink fx:id="loginLink" layoutX="120.0" layoutY="255.0" onAction="#onBackToLogin" text="Log in" />
+            <Text fx:id="signUpInfoText" layoutX="94.0" layoutY="291.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="92.7294921875" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.AuctionController">
+   <children>
+      <TabPane prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Create Auction">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="503.0">
+                     <children>
+                        <TextField fx:id="createProductNameTF" layoutX="211.0" layoutY="109.0" prefHeight="25.0" prefWidth="265.0" />
+                        <TextField fx:id="createLowestPriceTF" layoutX="211.0" layoutY="163.0" prefHeight="25.0" prefWidth="265.0" />
+                        <Text layoutX="60.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name" />
+                        <Text layoutX="60.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lowest Price" />
+                        <Text layoutX="52.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Expiration Date" />
+                        <Button layoutX="569.0" layoutY="442.0" mnemonicParsing="false" onAction="#onCreateAuction" text="Create" />
+                        <DatePicker fx:id="createExpirationDate" layoutX="209.0" layoutY="223.0" prefHeight="25.0" prefWidth="265.0" />
+                        <Slider fx:id="sliderHour" blockIncrement="1.0" layoutX="209.0" layoutY="302.0" majorTickUnit="2.0" max="23.0" minorTickCount="1" prefHeight="14.0" prefWidth="411.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="12.0" />
+                        <Slider fx:id="sliderMinute" layoutX="211.0" layoutY="373.0" majorTickUnit="5.0" max="59.0" minorTickCount="1" prefHeight="14.0" prefWidth="413.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="30.0" />
+                        <Text layoutX="98.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hour" />
+                        <Text layoutX="92.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Minute" />
+                        <Label fx:id="sliderHourLabel" layoutX="661.0" layoutY="294.0" textAlignment="CENTER" />
+                        <Label fx:id="sliderMinuteLabel" layoutX="660.0" layoutY="365.0" textAlignment="CENTER" />
+                        <Text fx:id="createAuctionInfoText" layoutX="118.0" layoutY="459.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="329.13671875" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="My Auctions">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="709.0" layoutY="506.0" mnemonicParsing="false" onAction="#onRefreshAuctions" text="Refresh" />
+                        <VBox fx:id="myAuctionTableHolder" layoutX="23.0" layoutY="15.0" prefHeight="470.0" prefWidth="750.0">
+                           <children>
+                              <TableView fx:id="myAuctionTable" prefHeight="470.0" prefWidth="750.0">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <Text fx:id="auctionInfoText" layoutX="123.0" layoutY="523.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="406.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab text="Bid">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="425.0" prefWidth="537.0">
+                     <children>
+                        <VBox fx:id="bidTableHolder" layoutX="21.0" layoutY="24.0" prefHeight="430.0" prefWidth="750.0">
+                           <children>
+                              <TableView fx:id="myBidTable" prefHeight="430.0" prefWidth="750.0" />
+                           </children>
+                        </VBox>
+                        <TextField fx:id="bidTextField" layoutX="41.0" layoutY="473.0" prefHeight="25.0" prefWidth="213.0" />
+                        <Button layoutX="307.0" layoutY="473.0" mnemonicParsing="false" onAction="#onBid" prefHeight="25.0" prefWidth="62.0" text="Bid" />
+                        <Text fx:id="infoText" fill="RED" layoutX="437.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="226.0" />
+                        <Button layoutX="714.0" layoutY="473.0" mnemonicParsing="false" onAction="#onRefreshBids" text="Refresh" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
